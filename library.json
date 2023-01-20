@@ -1,18 +1,18 @@
 {
-  "name":"ESPAsyncWebServer-esphome",
+  "name":"ESPAsyncWebServer",
   "description":"Asynchronous HTTP and WebSocket Server Library for ESP8266 and ESP32",
   "keywords":"http,async,websocket,webserver",
   "authors":
   {
-    "name": "ESPHome Team",
+    "name": "SVILUPPOSW-Carimali",
     "maintainer": true
   },
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/esphome/ESPAsyncWebServer.git"
+    "url": "https://github.com/SVILUPPOSW-Carimali/ESPAsyncWebServer.git"
   },
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "LGPL-3.0",
   "frameworks": "arduino",
   "platforms": ["espressif8266", "espressif32", "libretuya"],
@@ -23,9 +23,10 @@
       "platforms": "espressif8266"
     },
     {
-      "owner": "esphome",
-      "name": "AsyncTCP-esphome",
-      "platforms": ["espressif32", "libretuya"]
+      "owner": "SVILUPPOSW-Carimali",
+      "name": "AsyncTCP",
+      "platforms": ["espressif32", "libretuya"],
+      "version": "https://github.com/SVILUPPOSW-Carimali/AsyncTCP.git#2.0.1"
     },
     {
       "name": "Hash",
