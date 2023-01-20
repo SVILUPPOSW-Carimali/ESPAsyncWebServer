@@ -26,7 +26,7 @@
       "owner": "SVILUPPOSW-Carimali",
       "name": "AsyncTCP",
       "platforms": ["espressif32", "libretuya"],
-      "version": "https://github.com/SVILUPPOSW-Carimali/AsyncTCP.git#2.0.1"
+      "version": "https://github.com/SVILUPPOSW-Carimali/AsyncTCP.git@2.0.1"
     },
     {
       "name": "Hash",
