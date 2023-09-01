@@ -1299,10 +1299,11 @@ size_t AsyncWebSocketResponse::_ack(AsyncWebServerRequest *request, size_t len, 
 
 
 LimitedAsyncWebSocket::LimitedAsyncWebSocket(const String& url, uint16_t maxClients) : 
-  AsyncWebSocket(url),
-  _maxClients:maxClients
+  AsyncWebSocket(url)
 {  
+  _maxClients = maxClients;
 }
+
 
 void LimitedAsyncWebSocket::handleRequest(AsyncWebServerRequest *request) {
   if (this->count() > _maxClients) {
