@@ -322,7 +322,7 @@ class AsyncWebSocket: public AsyncWebHandler {
     void _handleDisconnect(AsyncWebSocketClient * client);
     void _handleEvent(AsyncWebSocketClient * client, AwsEventType type, void * arg, uint8_t *data, size_t len);
     virtual bool canHandle(AsyncWebServerRequest *request) override final;
-    virtual void handleRequest(AsyncWebServerRequest *request) override final;
+    virtual void handleRequest(AsyncWebServerRequest *request) override;
 
 
     //  messagebuffer functions/objects. 
@@ -332,6 +332,15 @@ class AsyncWebSocket: public AsyncWebHandler {
     void _cleanBuffers(); 
 
     AsyncWebSocketClientLinkedList getClients() const;
+};
+
+
+class LimitedAsyncWebSocket: public AsyncWebSocket {
+  private:
+    uint16_t _maxClients;
+  public:
+    LimitedAsyncWebSocket(const String& url, uint16_t maxClients = DEFAULT_MAX_WS_CLIENTS);
+    virtual void handleRequest(AsyncWebServerRequest *request) override final;
 };
 
 //WebServer response to authenticate the socket and detach the tcp client from the web server request

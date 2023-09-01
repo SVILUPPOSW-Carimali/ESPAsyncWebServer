@@ -1296,3 +1296,20 @@ size_t AsyncWebSocketResponse::_ack(AsyncWebServerRequest *request, size_t len, 
   }
   return 0;
 }
+
+
+LimitedAsyncWebSocket::LimitedAsyncWebSocket(const String& url, uint16_t maxClients) : 
+  AsyncWebSocket(url),
+  _maxClients:maxClients
+{  
+}
+
+void LimitedAsyncWebSocket::handleRequest(AsyncWebServerRequest *request) {
+  if (this->count() > _maxClients) {
+    //409 Conflict
+    //423 Locked
+    request->send(423);
+    return;
+  }
+  AsyncWebSocket::handleRequest(request);
+}
