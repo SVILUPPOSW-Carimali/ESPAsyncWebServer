@@ -1306,7 +1306,7 @@ LimitedAsyncWebSocket::LimitedAsyncWebSocket(const String& url, uint16_t maxClie
 
 
 void LimitedAsyncWebSocket::handleRequest(AsyncWebServerRequest *request) {
-  if (this->count() > _maxClients) {
+  if (this->count() >= _maxClients) {
     //409 Conflict
     //423 Locked
     request->send(423);
